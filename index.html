@@ -11,6 +11,7 @@
     --green-soft:#6bbf96; --green-pale:#e6f3ec; --cream:#faf9f6; --warm:#f3efe8;
     --white:#ffffff; --text:#1a1a1a; --text-mid:#4a4a4a; --text-light:#7a7a7a;
     --border:#d8d4cc; --amber:#d4943a; --yellow-tag:#f5ecd0; --yellow-border:#d4c78a;
+    --blue-hint:#3a5a7a; --purple-hint:#5a4a6a;
     --serif:'Playfair Display',Georgia,serif; --sans:'Lato',sans-serif;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -24,14 +25,14 @@
   .nav-links a{text-decoration:none;color:rgba(255,255,255,0.6);font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.3s;cursor:pointer;}
   .nav-links a:hover{color:var(--green-soft);}
 
-  .hero{background:linear-gradient(150deg,var(--green-dark) 0%,var(--green-mid) 50%,#1a4a35 100%);padding:7rem 2rem 6rem;position:relative;overflow:hidden;}
-  .hero-glow{position:absolute;top:-100px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(61,158,110,0.12) 0%,transparent 65%);border-radius:50%;}
+  .hero{background:linear-gradient(150deg,var(--green-dark) 0%,var(--green-mid) 40%,#1a4a35 70%,#2a3a4a 100%);padding:7rem 2rem 6rem;position:relative;overflow:hidden;}
+  .hero-glow{position:absolute;top:-100px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(90,74,106,0.1) 0%,transparent 65%);border-radius:50%;}
   .hero-glow-2{position:absolute;bottom:-80px;left:10%;width:350px;height:350px;background:radial-gradient(circle,rgba(45,122,82,0.15) 0%,transparent 65%);border-radius:50%;}
-  .hero-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 260px;gap:3rem;align-items:center;position:relative;z-index:2;}
+  .hero-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:center;position:relative;z-index:2;}
   .hero h1{font-family:var(--serif);font-size:3.8rem;font-weight:500;color:var(--white);line-height:1.08;margin-bottom:0.5rem;}
   .hero .subtitle{font-size:0.85rem;color:var(--green-soft);font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2.2rem;}
   .hero p{color:rgba(255,255,255,0.8);font-size:1rem;max-width:540px;margin-bottom:1rem;line-height:1.85;font-weight:300;}
-  .hero-photo{width:100%;aspect-ratio:3/4;background:rgba(255,255,255,0.06);border:2px dashed rgba(255,255,255,0.2);border-radius:8px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);font-size:0.85rem;font-weight:700;text-align:center;padding:1rem;}
+  .hero-photo{width:100%;max-width:320px;aspect-ratio:3/4;border-radius:8px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.3);}
 
   .page{max-width:1000px;margin:0 auto;padding:5rem 2rem;position:relative;z-index:2;}
   .section-header{margin-bottom:2.5rem;}
@@ -42,13 +43,13 @@
   .content-block{margin-bottom:3rem;}
 
   /* Simple line divider */
-  .section-line{height:3px;background:linear-gradient(90deg,var(--green-dark),var(--green-light),transparent);border:none;margin:0;}
+  .section-line{height:3px;background:var(--green-dark);border:none;margin:0;display:block;width:100%;}
 
   .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
   .about-card{background:var(--white);border-radius:10px;padding:2rem 1.5rem;box-shadow:0 4px 20px rgba(0,0,0,0.05);position:relative;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
   .about-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--green-dark),var(--green-light));}
   .about-card:nth-child(2)::before{background:linear-gradient(90deg,var(--green),var(--green-soft));}
-  .about-card:nth-child(3)::before{background:linear-gradient(90deg,var(--green-light),var(--green-dark));}
+  .about-card:nth-child(3)::before{background:linear-gradient(90deg,var(--green-light),#4a5a7a);}
   .about-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,0.07);}
   .about-card h3{font-size:1.2rem;margin-bottom:0.7rem;}
   .about-card p{font-size:0.95rem;max-width:none;}
@@ -161,7 +162,7 @@
   /* When PDF is embedded, use iframe */
   .pdf-embed iframe{width:100%;height:500px;border:none;}
 
-  .connect-section{background:linear-gradient(150deg,var(--green-dark) 0%,var(--green-mid) 100%);padding:5rem 2rem;position:relative;z-index:2;}
+  .connect-section{background:linear-gradient(150deg,var(--green-dark) 0%,var(--green-mid) 50%,#2a3a4a 80%,#3a3550 100%);padding:5rem 2rem;position:relative;z-index:2;}
   .connect-inner{max-width:1000px;margin:0 auto;}
   .connect-section h2{color:var(--white);font-family:var(--serif);font-size:2.3rem;font-weight:500;margin-bottom:1.5rem;}
   .connect-section p{color:rgba(255,255,255,0.78);max-width:560px;font-weight:300;}
@@ -176,6 +177,7 @@
   @media(max-width:768px){
     .hero-inner{grid-template-columns:1fr;}
     .hero h1{font-size:2.6rem;}
+    .hero-photo{max-width:240px;}
     .about-grid,.values-row,.style-explainers{grid-template-columns:1fr;}
     .nav-links{gap:0.7rem;}
     .nav-links a{font-size:0.68rem;}
@@ -238,7 +240,7 @@
   <div class="video-inner">
     <h2>Under the Keys</h2>
     <p class="video-intro">This video is a look at how I think about data, told through something I actually enjoy doing: taking apart a keyboard, cleaning it, and putting it back together.</p>
-        <div class="video-placeholder"> <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nlkShlNByYY" frameborder="0" allowfullscreen style="border-radius:10px;"></iframe> </div>
+    <div class="video-placeholder"> <iframe width="100%" height="100%" src="https://www.youtube.com/embed/nlkShlNByYY" frameborder="0" allowfullscreen style="border-radius:10px;"></iframe> </div>
   </div>
 </section>
 
@@ -421,8 +423,25 @@
         <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 2l5 5h-5V4zm-3 9h4v2h-4v-2zm0 3h4v2h-4v-2zm-2-3h1v2H8v-2zm0 3h1v2H8v-2z"/></svg>
         Sony Database Advising Group — Full Report
       </div>
+      <!-- TO EMBED YOUR PDF:
+           1. Upload the PDF to Google Drive
+           2. Right-click the file → Share → Change to "Anyone with the link"
+           3. Open the PDF in Google Drive and look at the URL bar
+           4. Copy the FILE_ID (the long string between /d/ and /view)
+              Example URL: https://drive.google.com/file/d/1aBcDeFgHiJkLmNoPqRsTuVwXyZ/view
+              The FILE_ID is: 1aBcDeFgHiJkLmNoPqRsTuVwXyZ
+           5. Replace PASTE_YOUR_FILE_ID_HERE below with your actual file ID
+           6. Delete the pdf-embed-body div below (the placeholder)
+           7. Uncomment the iframe line by removing the < ! - - and - - > around it
+      -->
+      <!-- <iframe src="https://drive.google.com/file/d/PASTE_YOUR_FILE_ID_HERE/preview" width="100%" height="500" style="border:none;"></iframe> -->
       <div class="pdf-embed-body">
-        <iframe src="https://drive.google.com/file/d/1GJ5G0pVP9c2RIP_jI7IS1Cjjf1qcMnlZ/preview" width="100%" height="500" style="border:none;"></iframe>
+        <p>To embed this PDF:<br>
+        1. Upload it to Google Drive<br>
+        2. Set sharing to "Anyone with the link"<br>
+        3. Copy the file ID from the URL<br>
+        4. Uncomment the iframe above and paste your file ID<br>
+        5. Delete this placeholder div</p>
       </div>
     </div>
   </div>
@@ -443,8 +462,18 @@
         <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm-1 2l5 5h-5V4zm-3 9h4v2h-4v-2zm0 3h4v2h-4v-2zm-2-3h1v2H8v-2zm0 3h1v2H8v-2z"/></svg>
         Amazon Profitability Analysis — Full Report
       </div>
+      <!-- TO EMBED YOUR PDF:
+           Same steps as above - upload to Google Drive, get the file ID, 
+           uncomment the iframe, paste your file ID, delete the placeholder div
+      -->
+      <!-- <iframe src="https://drive.google.com/file/d/PASTE_YOUR_FILE_ID_HERE/preview" width="100%" height="500" style="border:none;"></iframe> -->
       <div class="pdf-embed-body">
-        <iframe src="https://drive.google.com/file/d/1MVZZYdVsbGUqgHjfnlUBPAVWSTAOzMzS/preview" width="100%" height="500" style="border:none;"></iframe>
+        <p>To embed this PDF:<br>
+        1. Upload it to Google Drive<br>
+        2. Set sharing to "Anyone with the link"<br>
+        3. Copy the file ID from the URL<br>
+        4. Uncomment the iframe above and paste your file ID<br>
+        5. Delete this placeholder div</p>
       </div>
     </div>
   </div>
@@ -457,8 +486,8 @@
     <h2>Connect</h2>
     <p>If you'd like to get in touch, whether it's about a project, a question, or just to say hello, I'd be happy to hear from you.</p>
     <div class="connect-links">
-      <div class="connect-link"><span class="link-label">Email</span><span>tranduylong402@gmail.com</span></div>
-      <div class="connect-link"><span class="link-label">LinkedIn</span><span>https://www.linkedin.com/in/tran-duy-long-nmru/</span></div>
+      <div class="connect-link"><span class="link-label">Email</span><span>[your email address]</span></div>
+      <div class="connect-link"><span class="link-label">LinkedIn</span><span>[your LinkedIn URL]</span></div>
     </div>
     <p class="connect-closing">I'm always open to learning from people who've been where I'm trying to go. If you're working in data, analytics, or tech, I'd love to connect.</p>
   </div>
